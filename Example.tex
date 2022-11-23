@@ -1,0 +1,32 @@
+%This is a minimal working example for writing a hebrew document using XeLaTeX, with theorems.
+%Make sure you compile this file using XeLaTeX.
+\documentclass[english,hebrew]{amsart}
+
+\usepackage{fontspec}
+\setmainfont[Mapping=tex-text]{David CLM}
+
+\usepackage{polyglossia}
+\setdefaultlanguage{hebrew}
+\setotherlanguage{english}
+
+% The following are definitions of names for theorem environments.
+% One needs to add definitions for additional environments e.g. Lemma, Claim, Proof etc.
+
+\makeatletter
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+
+\makeatother
+
+\addto\captionsenglish{\renewcommand{\theoremname}{Theorem}}
+\addto\captionshebrew{\renewcommand{\theoremname}{משפט}}
+\providecommand{\theoremname}{משפט}
+
+\begin{document}
+בלה בלה
+\begin{thm}
+יהי בלה
+\end{thm}
+
+
+\end{document}
